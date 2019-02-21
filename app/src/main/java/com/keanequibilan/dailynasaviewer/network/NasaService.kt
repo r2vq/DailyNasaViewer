@@ -6,6 +6,8 @@ import com.keanequibilan.dailynasaviewer.APOD_QUERY_PARAM_HD
 import com.keanequibilan.dailynasaviewer.NASA_API_PATH_APOD
 import com.keanequibilan.dailynasaviewer.model.Apod
 import kotlinx.coroutines.Deferred
+import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -27,5 +29,5 @@ interface NasaService {
         @Query(APOD_QUERY_PARAM_DATE) date: String?,
         @Query(APOD_QUERY_PARAM_HD) isHd: Boolean?,
         @Query(APOD_QUERY_PARAM_API_KEY) apiKey: String
-    ): Deferred<Apod>
+    ): Deferred<Response<Apod>>
 }
