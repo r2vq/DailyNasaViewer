@@ -40,8 +40,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$gson_version"
 
     // Koin
-    implementation  "org.koin:koin-android:$koin_version"
-    implementation  "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
