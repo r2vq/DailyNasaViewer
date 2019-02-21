@@ -20,8 +20,8 @@ interface NasaService {
      * This endpoint structures the Astronomy Picture of the Day imagery and associated metadata so that it can be
      * repurposed for other applications.
      *
-     * @param date Optional. Default: today
-     * @param isHd Optional. Default: false
+     * @param date Optional. Default: today | The date of the APOD image to retrieve. Uses the format "YYYY-MM-DD".
+     * @param isHd Optional. Default: false | Retrieve the URL for the high resolution image.
      * @param apiKey Required. For the purposes of this application, this will be hard coded.
      */
     @GET(NASA_API_PATH_APOD)
