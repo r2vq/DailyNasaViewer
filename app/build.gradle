@@ -6,6 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     defaultConfig {
         applicationId "com.keanequibilan.dailynasaviewer"
         minSdkVersion 24
@@ -33,6 +37,10 @@ dependencies {
 
     // GSON
     implementation "com.google.code.gson:gson:$gson_version"
+
+    // Koin
+    implementation  "org.koin:koin-android:$koin_version"
+    implementation  "org.koin:koin-androidx-scope:$koin_version"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
