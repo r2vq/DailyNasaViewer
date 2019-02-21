@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package com.keanequibilan.dailynasaviewer
 
 const val NASA_API_BASE_URL = "https://api.nasa.gov/"
