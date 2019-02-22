@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'de.mannodermaus.android-junit5'
 
 android {
     compileSdkVersion 28
@@ -62,4 +61,7 @@ dependencies {
     testImplementation "junit:junit:$junit4_version"
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit5_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$junit5_version"
 }
