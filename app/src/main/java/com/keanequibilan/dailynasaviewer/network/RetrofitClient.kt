@@ -28,13 +28,10 @@ class RetrofitClient(
      *
      * @see [NasaService.getApodAsync] for more info.
      *
-     * @param date Optional. Default: today
-     * @param isHd Optional. Default: false
+     * @param date Optional. Default: today | The date of the APOD image to retrieve. Uses the format "YYYY-MM-DD".
+     * @param isHd Optional. Default: false | Retrieve the URL for the high resolution image.
      */
-    suspend fun getApod(
-        date: String? = null,
-        isHd: Boolean? = null
-    ): Response<Apod> = client
+    suspend fun getApod(date: String? = null, isHd: Boolean? = null): Response<Apod> = client
         .getApodAsync(date, isHd, apiKey = NASA_API_KEY)
         .await()
 }
