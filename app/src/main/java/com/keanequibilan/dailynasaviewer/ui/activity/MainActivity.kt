@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity(), MainView {
                 this,
                 Observer { response -> presenter.onLoadApod(response) }
             )
+
+        iv_apod.setOnClickListener {
+            presenter.onImageClick()
+        }
     }
 
     override fun loadImage(url: String) {
@@ -36,6 +40,10 @@ class MainActivity : AppCompatActivity(), MainView {
             .load(url)
             .fitCenter()
             .into(iv_apod)
+    }
+
+    override fun switchScreens(url: String) {
+        FullScreenActivity.transitionToActivity(this, url)
     }
 
     override fun loadTitle(title: String) {

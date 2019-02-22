@@ -23,4 +23,11 @@ interface MainView {
      * @param code The response code from the server
      */
     fun showError(code: Int)
+
+    /**
+     * Switches to the full screen version of the image.
+     *
+     * @param url The string to show on the new screen
+     */
+    fun switchScreens(url: String)
 }
