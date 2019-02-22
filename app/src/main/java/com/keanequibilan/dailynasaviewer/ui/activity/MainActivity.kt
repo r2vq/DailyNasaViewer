@@ -1,14 +1,14 @@
 package com.keanequibilan.dailynasaviewer.ui.activity
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.keanequibilan.dailynasaviewer.R
-import com.keanequibilan.dailynasaviewer.model.Apod
 import com.keanequibilan.dailynasaviewer.ui.presenter.MainPresenter
 import com.keanequibilan.dailynasaviewer.ui.view.MainView
 import com.keanequibilan.dailynasaviewer.viewmodel.ApodViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -30,11 +30,19 @@ class MainActivity : AppCompatActivity(), MainView {
             )
     }
 
-    override fun showSuccess(apod: Apod) {
-        Toast.makeText(this, "Success! ${apod.title}", Toast.LENGTH_SHORT).show()
+    override fun loadImage(url: String) {
+        Glide
+            .with(this)
+            .load(url)
+            .fitCenter()
+            .into(iv_apod)
     }
 
-    override fun showError() {
-        Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
+    override fun loadTitle(title: String) {
+        tv_title.text = title
+    }
+
+    override fun showError(code: Int) {
+        tv_title.text = getString(R.string.error_message, code.toString())
     }
 }

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DailyNasaViewer</string>
+    <string name="apod_content_description">Astronomical Photograph of the Day</string>
+    <string name="loading">Loading…</string>
+    <string name="error_message">Error downloading picture of the day. Error Code: %1$s</string>
 </resources>

@@ -1,15 +1,26 @@
 package com.keanequibilan.dailynasaviewer.ui.view
 
-import com.keanequibilan.dailynasaviewer.model.Apod
-
+/**
+ * The view that interacts with [com.keanequibilan.dailynasaviewer.ui.presenter.MainPresenter] and controls the
+ * [com.keanequibilan.dailynasaviewer.ui.activity.MainActivity].
+ */
 interface MainView {
     /**
-     * Invoke when you to show the success state in the main view.
+     * Load the image in the image view.
+     *
+     * @param url The URL of the image to load.
      */
-    fun showSuccess(apod: Apod)
+    fun loadImage(url: String)
+
+    /**
+     * Load the text of the image.
+     */
+    fun loadTitle(title: String)
 
     /**
      * Invoke when you want to show the error state in the main view.
+     *
+     * @param code The response code from the server
      */
-    fun showError()
+    fun showError(code: Int)
 }
