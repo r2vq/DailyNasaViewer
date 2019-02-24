@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), MainView {
         Glide
             .with(this)
             .load(url)
-            .fitCenter()
+            .centerCrop()
             .into(iv_apod)
     }
 
