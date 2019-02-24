@@ -10,17 +10,24 @@ import retrofit2.Response
  */
 class MainPresenter(private val view: MainView) {
 
+    var url: String? = null
+
     /**
      * Call this when a [Response] with an [Apod] is loaded. This function will invoke a [view] method depending on the
      * success of the response.
      */
-    fun onLoadApod(response: Response<Apod>) {
-        response.body()?.let { apod ->
-            if (response.isVerySuccessful()) {
-                view.showSuccess(apod)
-            } else {
-                view.showError()
-            }
+    fun onLoadApod(response: Response<Apod>) = response
+        .body()
+        ?.takeIf { response.isVerySuccessful() }
+        ?.let { apod ->
+            url = apod.url
+            view.loadImage(apod.url)
+            view.loadTitle(apod.title)
+        } ?: view.showError(response.code())
+
+    fun onImageClick() {
+        url?.let {
+            view.switchScreens(it)
         }
     }
 }

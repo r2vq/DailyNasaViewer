@@ -3,7 +3,7 @@
 package com.keanequibilan.dailynasaviewer
 
 const val NASA_API_BASE_URL = "https://api.nasa.gov/"
-const val NASA_API_KEY = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo"
+const val NASA_API_KEY = "bhGKOScQcMOkyx7tZs0iysWGRGFzTqDqltTrtaqq"
 const val NASA_API_PATH_APOD = "planetary/apod"
 
 const val APOD_QUERY_PARAM_DATE = "date"
